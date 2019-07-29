@@ -2,8 +2,6 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from '../reducers/rootReducer';
 
-const initialState = {};
-
 const middleware = [thunk];
 
 let executeCompose = compose(applyMiddleware(...middleware));
@@ -20,9 +18,8 @@ if (
   );
 }
 
-const configureStore = (railsProps) => (
-    createStore(rootReducer, initialState, executeCompose, railsProps)
+const store = (railsProps) => (
+  createStore(rootReducer, railsProps, executeCompose)
 );
-
-export default configureStore;
   
+export default store;
