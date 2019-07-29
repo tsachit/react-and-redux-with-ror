@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { NAME_UPDATE } from '../constants';
+import { NAME_UPDATE } from '../utils/constants';
 
 const name = (state = '', action) => {
   switch (action.type) {
