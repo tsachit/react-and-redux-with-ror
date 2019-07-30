@@ -14,10 +14,16 @@ class HelloWorld extends Component {
     }
 
     this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onChange.bind(this);
   }
 
   onChange(e) {
+    e.preventDefault();
+    
     this.setState({ [e.target.name]: e.target.value });
+    this.props.updateName(
+      this.state.name
+    );
   }
 
   render() {
@@ -28,7 +34,7 @@ class HelloWorld extends Component {
         Greetings, {name}!
       </h3>
       <hr />
-      <form >
+      <form onSubmit={this.onSubmit}>
         <label htmlFor="name">
           Say hello to:
         </label>
