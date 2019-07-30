@@ -25,7 +25,7 @@ class HelloWorld extends Component {
     return (
     <div>
       <h3>
-        Hello, {name}!
+        Greetings, {name}!
       </h3>
       <hr />
       <form >
